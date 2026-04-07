@@ -34,6 +34,7 @@
 ## Concepts
 - [[File_over_app]]: File over app
 - [[Identity]]: My Identity & Taste Profile
+- [[Vibe_Coding]]: Vibe Coding
 
 ## Logs
 - [[ai___i_by_every]]: ---
