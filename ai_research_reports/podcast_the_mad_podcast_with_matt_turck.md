@@ -1,0 +1,540 @@
+# AI Podcast: The MAD Podcast with Matt Turck
+
+> 共收集 1 期节目摘要。
+
+---
+
+## AI is Already Building AI | Google DeepMind’s Mostafa Dehghani
+
+- **发布时间**: 2026/4/2 11:30:00
+- **原始链接**: [点击查看](https://podcasters.spotify.com/pod/show/firstmark/episodes/AI-is-Already-Building-AI--Google-DeepMinds-Mostafa-Dehghani-e3ham4n)
+
+### 📜 内容摘要与转录
+
+Speaker 1 | 00:00 - 00:28
+Most of the people don't realize that this is, like, already happening, especially over the past few months. In almost every lab, the new generation of the models are built heavily using the previous generation of the models. What is missing right now is long horizon and full automation, and we are moving to that direction super, super fast. The moment that we had this full automation, we can close the loop of self improvement. We just got rid of the human bottleneck for improving these models, which I expect to see a huge jump again from such development.
+
+Speaker 2 | 00:28 - 00:59
+Hi. Hi, I'm Matt Turk. Welcome to the MAD Podcast. Today, my guest is Mostafa Deghani, a top AI researcher at Google DeepMind and a core contributor to some of the most influential architectural breakthroughs of the last decade, including universal transformers, the vision transformer, and the natively multimodal Gemini family. In this episode, we unpack what's hot in Frontier AI right now, including what it actually means for AI to think in loops and the immediate timeline for recursive self improvement where AI autonomously builds the next generation of AI.
+
+Speaker 2 | 00:59 - 01:33
+We also dive into the technical evolution of image generation with Nano Banana two and why continual learning could completely disrupt how enterprise data pipelines and Rag systems are built today. Please enjoy this fantastic deep dive with Mustafa Deghani. One of the hardest concepts in AI research right now seems to be the concept of loops. So I thought it'd be a fun place to start this idea that models are going to improve not by being bigger, but by thinking recursively. What does that mean exactly?
+
+Speaker 1 | 01:33 - 02:09
+Definitely one of the top is active areas for almost every lab to invest in looping, and and it has like like operation at different levels. The one that is on on the on the metro level is basically the the looping that we use, like architecture or at inference time for test and compute and stuff like that. And then at a higher level is basically the loop that the loop that we have over the development of these models, which is basically we refer to add to to it as self improvement. If we want to put it like like very like like, let's talk about self improvement as as like this general concept. Right?
+
+Speaker 1 | 02:09 - 02:38
+Like, if I want to put it like very simply, it is really just the continuation of the trend that we've been like riding for decades. Right? And and think about it in classical machine learning, humans have to sit down and manually engineer the features and you had to decide like what the model actually pays attention to. And deep learning and neural network came along and and they said, okay, let's just remove that. Let the model figure out the representation itself.
+
+Speaker 1 | 02:38 - 03:15
+And that was actually a huge deal. And we somehow removed a massive human bottleneck and inhuman bias. And then like further and instead of just like designing architecture, we started learning them to instead of curating like, you know, every piece of training signal, we scaled to kind of basically data driven approaches and let the data speak. And the self improvement and this, like, loop into development is just the next step in in in the same direction. And the whole idea and the whole point of it is you're removing the human bottleneck and bias from improving these models.
+
+Speaker 1 | 03:15 - 03:34
+Right? And now, like, you say that, okay. You know, not not just human doesn't have to handcraft features anymore, but also we don't want the human to sit in the loop every time that the model has to to get better. And and I think that's basically on the on the on the development side. So it's not radically new.
+
+Speaker 1 | 03:34 - 04:17
+It's the same story, just a new chapter of the same story. And I think every time that we removed human from, like, human judgment from this process, we kind of got over a bottleneck. I would say, like, the self improvement and looping over the development is kinda like doing that at the highest level, which is basically improving these models. If we want to go to more detailed level of looping, we can we can talk about ways of increasing test and compute for these models and how we let these models to loop over their process within a specific problem to to refine it, to to think about it. And like think the the the most familiar form is just, chain of thought and and letting the model to think with extra tokens.
+
+Speaker 1 | 04:17 - 04:59
+That's beyond that. And and you can think about different ideas that you let them all to increase the compute for for any specific problems. Like, what if I have, like, dummy tokens that that they can use as, like, read and tape to kinda, like, you know, reverify what I've done and and go through the the the the the solutions or the process that I'm, like, doing over over different steps and and understand, you know, like, what what what has been done growing, what has to be done next, or even, like, you know, negative sparsity, which is basically re reusing part of the model multiple times. And this sort of looping is also, like, been shown to be super, super helpful, mostly because you just let the model to to throw more compute on on a difficult problem.
+
+Speaker 2 | 04:59 - 05:29
+So that's self improvement at inference time. I think you alluded to earlier there is also a bigger concept that's maybe, I guess, science fiction, except it seems to be becoming a reality very quickly, which is this concept of recursive self improvement or RSI that seems to be, what a lot of people are talking about. I think, ICLR is coming up in a few weeks and there's a bunch of papers focused on that. What is that? What is recursive self improvement as a concept?
+
+Speaker 1 | 05:29 - 06:14
+It's actually interesting because you you referred to that as something that, like, looked like a bit of a sci fi situation where these models are actually improving themselves. And and that's true because a few years ago when you were you wanted to talk about this, you could just write a prospective paper at a at a conference and and, like, you know, talk about it at super high level. But if we go and and check out what is happening right now, like, to a really good extent happening, like, most of the the the like and and and it's somehow, like, most of the people don't realize that this is, like, already happening, especially over the past few months. In almost every lab, the new generation of the models are built heavily using the previous generation of the models. I I think that's basically, like like, the case, again, everywhere.
+
+Speaker 1 | 06:15 - 06:55
+And it's not fully automatic yet, but the direction is like super clear. And it's like easy to imagine that, you know, like we're gonna get to a situation with full automation. These models are going to improve themselves and keep learning from the world. And again, it has like relation with other concept, like continual learning and other other concepts that we are still not yet to to the to the most advanced, like, point of it. But if someone comes and say that, oh, you know, like, I I have an idea to get a model to calculate the gradient and updates its weights, like, on the fly, it it just feels, very normal.
+
+Speaker 1 | 06:55 - 07:06
+You know? It's not something that, wow. This is, like, is such an amazing idea. I think what is missing right now is, like, long horizon and full automation. And and we are, like, moving to that direction, like, super, super fast.
+
+Speaker 1 | 07:06 - 07:32
+The moment that we had this full automation, I would say we we can close the loop of self improvement, and then it becomes the like, know, the problems become, like, you know, mostly providing compute for these models to actually do what they want to do. And as I said, like, I like, in the comment, we just got rid of the the the human bottleneck for improving these models, which I I expect to to see a huge jump again, from from such development.
+
+Speaker 2 | 07:32 - 07:45
+So people may have, seen or heard about, Coparty's auto research project a few weeks ago. Is that an example, presumably reasonably narrow to make it work? Is that an example of a self recursive loop?
+
+Speaker 1 | 07:45 - 08:17
+That is definitely. And I think that was one of the early examples of, like, seeing these models actually doing something super sensible on the research side. So we've been seeing them like doing a lot of good work on improving the engineering part of the development loop. But on the research side, which like, you know, you think about, okay, maybe some sort of, you know, gut feeling or intuition is needed. And like a researcher with like a long time of like, you know, playing with these models and experience can do this, but but not necessarily, you know, like a model.
+
+Speaker 1 | 08:17 - 08:51
+I think we've seen the sign that, Okay, you know, maybe that basically that kind of a golden part of the recipe, a successful recipe that mostly coming from like intuition of a good researcher is coming to to kind of these development loops by by these models. And it's a bit hard to think about, okay, you know, does it mean that we can replace, like, every genius researcher with these models, like, like, very soon? Maybe. And I don't know, like, how how soon. But this this is definitely a sign of something that we we kind of doubted, like, you know, few years ago.
+
+Speaker 1 | 08:51 - 08:56
+You know, we we couldn't believe that, well, this is gonna happen that early, which is very exciting.
+
+Speaker 2 | 08:56 - 09:38
+I wanna play it back just to make sure that people listening to this understand. I mean, we're talking about AI building AI, and I think a few months ago, if you talk to researchers, people would say, oh yeah, we already use AI to build AI, but that really meant that we use AI tools and reasoning models to come up with ideas and thoughts about building models. But here, what we're talking about is AI automatically updating itself, updating its weights in a recursive manner, leading to potentially a dramatic acceleration in progress. And what you're saying is that this is largely upon us and a question of longer horizon and basically more more compute. Is that fair?
+
+Speaker 1 | 09:38 - 09:53
+I think so. Like, this is one. And the other one is also I'm not gonna say that, oh, know, soon we're gonna have these models, like, fully automated. And there are actually many problems that we have to solve. But, directionally, I can see how this can happen.
+
+Speaker 1 | 09:53 - 10:01
+You know? Like like, it's not something that I would look at it as, like, super hard. It's like hard but but very possible.
+
+Speaker 2 | 10:01 - 10:13
+Okay. So what what are the roadblocks? So so you talked about compute. Is evaluation one of them? Because presumably the model needs to understand what is right and what is wrong in terms of the quality of the answer.
+
+Speaker 2 | 10:13 - 10:14
+Is that one of the issues?
+
+Speaker 1 | 10:14 - 10:28
+100%. At the end of the day, you can only improve what you can measure. Right? And then getting evaluation is, like, just hard. And and at the end of the day, it it becomes almost a philosophical problem, not just the technical one.
+
+Speaker 1 | 10:28 - 11:04
+Like, this is actually a very interesting observation. So if you have a a, like, a team of super competent people, most of the time, they can do, like, massive progress on a problem if there is some concrete eval to heal climate. But if there's no eval, it's just, like, really hard to to make progress. And and the fact that we don't have evals that, like or or, like, even defining evals that that can maybe measure, oh, you know how close we are to the point that we can actually get get a self improvement loop. It's just like we don't we don't have that.
+
+Speaker 1 | 11:04 - 11:45
+And and it's just making it, like, much harder to to to measure the the progress in that direction. But there are proxies and there are definitely some evals that, you know, like we're going from, oh, maybe we can evaluate, like, every step of the model toward this direction. Maybe maybe we can evaluate up to this many turns of the model, or maybe we can evaluate the model helping itself to improve in that specific framework and in this specific setup. And this part of the the like the machine learning that needs like iteration. It's also quite interesting because the difficulty of building eval is like, the infrastructure that you need to reliably run evals that are super complicated is also, like, super hard.
+
+Speaker 1 | 11:45 - 12:36
+It's quite funny, but sometimes figuring out that, okay, how can I create an environment for a model that operates safely in in like, within Google? Right? And and does all the jobs that an RE and and and and like RE, like, engineer or or a research scientist can do, like, in a safe setup, you know, where it can like, because right now, we definitely we don't we are not confident about, you know, them doing the right things all the time. And measuring, like, how much they can push and and how long they can push a task is very difficult. And, like, connecting all these points into an environment that these models are operating and then get them run efficiently and and, like, bringing diversity to eval is definitely one of the bottlenecks of of like making progress in this direction.
+
+Speaker 2 | 12:36 - 12:52
+A couple of weeks ago, we had a fun conversation with, Corona Hong of Axiom Math, and we talked about formal verification. Is that a promising area from your perspective? Is something like formal verification what would enable you to make sure that the, you know, the improvement loop keeps, continuing?
+
+Speaker 1 | 12:52 - 13:16
+In my opinion, formal verification is, one of the most powerful, like keys to to enable self improvement, but it's not B key. And if you think about it, like for mass code logics, it's great. You can you can run a proof. It either checks out or not. If you go to other domains that are a little bit messier, like, for example, you cannot write a formal proof that if a doctor's recommendation is good.
+
+Speaker 1 | 13:16 - 13:42
+Right. Like so. So it's not hard. It's not easy to to have like to extend this formal verification to all the domains in real world. But one question that is actually an interesting question, which is, like, very relevant to formal verification is how can we, look at these methods and and, like, formal verification and build that kind of tight and honest feedback loop for the messy part of the world.
+
+Speaker 1 | 13:42 - 13:58
+I think that that's, like, very inspiring to to build, like like, on top of these, like, formal verification methods to to extend to domains that, like, not easy to verify easily. But but you need some sort of clean and tight feedback loop to be able to make progress.
+
+Speaker 2 | 13:58 - 14:11
+So same problem as reinforcement learning, right? Like the second you start veering away from math and code, you start getting into like very messy territory. Is model collapse, one of the issues to think about or is that orthogonal?
+
+Speaker 1 | 14:11 - 14:33
+Model collapse is definitely a risk. Right? And, I would say model collapse mainly happens when you have a loop that is completely closed. Right? And if you don't have any outside signal and just the model, for example, talking to itself or or operating in a in a very, like a like a restricted environment, there's a good chance that your model coaxes.
+
+Speaker 1 | 14:33 - 15:00
+But but if you have a strong verifier or some sort of a, like, a real reward signal that anchor this this kinda, like, like, signals that is coming from, like, AI generated data, for example, it can be quite powerful. I think, like, the key here is to staying grounded to to something real, and then you can most likely avoid, like, you know, things like model collapse. And I but, yeah, I mean, again, it's it's a risk, but it's not definitely, like, a major.
+
+Speaker 2 | 15:00 - 15:06
+And perhaps to to make this accessible to to everyone, can you define what model collapse is in the first place?
+
+Speaker 1 | 15:06 - 15:33
+So basically, when you have some sort of, like, data and environment that these models are interacting with, but those environments and and data are are designed, for example, by another model. Like like, this is just an example of that. Right? And then you become really, really good at this specific part, and then suddenly you lose generalization to anything beyond that. And this is, one of the kinda, like, definition or one of the cases that that like like a model collapsing, would would result to.
+
+Speaker 2 | 15:33 - 15:47
+So you mentioned loo losing generalization. Is that is that particularly in the concept of RSI a, worry that either you have those, self reinforcing loops, but they need to be fairly narrow or you have more general models, but then you kind of have the loops?
+
+Speaker 1 | 15:47 - 16:01
+This is an interesting question. Again, like, you know, generalization versus specialization. Let me go a few steps back. We had this discussion like many, many times. How should we do a trade off between generalization and specialization when we are developing these models?
+
+Speaker 1 | 16:01 - 16:21
+I think long term, you want a model that knows everything and knows when to go deep versus wide. Right? Imagine like you have an agentic actor, right? Like if you're an agentic coder, If your agent is, like, super strong at every step of operation, like a really, really good program there, it's amazing. You know?
+
+Speaker 1 | 16:21 - 16:50
+Like, it's, like, super specialized. But for many of the problems, the coding problems, you need some sort of planning and understanding what's going on and collecting information and and, like, you know, based on the context, deciding what to do. And then after you define the steps, then your, like, super strong specialization just kicks in. And and before that, like, being a a generalist is is, like, super useful. Definitely, generalization is is, like, one of the things that, like, you need to get to the ultimate side of AGI.
+
+Speaker 1 | 16:51 - 17:28
+But short term, I would say, like, building a specialist model is, like, probably the fastest way to learn, like, what is actually possible. And in in many cases, these, like, specialized model are becoming a stepping stone toward a generalist model, which which is like super valuable. Right. So so you can imagine that, oh, you know, if I'm actually thinking about self improvement, maybe I need to make sure that, you know, in a very specific area, I can I can build that maybe, you know, like I I focus on coding? And then if it works out, then I I go through, like, you know, how to widen that and how to bring more into into this specialized setup.
+
+Speaker 1 | 17:28 - 17:44
+One thing that I always, like, say is that people don't care what category their problem falls into. Right? And and if a human calls, like, something a problem, then AI should be able to solve it. And I I think that's, like, fundamentally a generalist need. Right?
+
+Speaker 1 | 17:44 - 18:03
+So at the end of the day, you need generalization. And, like, like, playing this like, like, going through this spectrum of, you know, like, super generalized model and super specialized model is more about, you know, like, a long term, short term, and how to take advantage of each side, during this process.
+
+Speaker 2 | 18:03 - 18:14
+What's a specialized model today? Is that a separate model or is that a broad general model that's trained in a specific way, including in particular through through RL?
+
+Speaker 1 | 18:14 - 18:33
+Okay. So here's here's the point. We used to have constraint like compute. And then if you wanted to push a model to be, like, SOTA, we would choose specific dimensions. And then we say that, okay, know, we we want to kinda, like, allocate the compute that we have to that and then make this model look really good at this.
+
+Speaker 1 | 18:33 - 19:10
+Like, you know, something that is, like, extremely expert at this. So that was, like, basically the trade off that we were we were, like, trying to to make given the compute budget that we have. As we as we go through this, like like, the the the phase of compute becoming, like, you know, more available, like, cheaper, and then, you know, like, maybe we we construct with other stuff, like data and stuff. One of the other trade offs that pops up is especially in post training, like, you know, this game of a vacuum ball that sometimes it's, like, really hard to get your model to be good across the board. So you try to kinda, like, make it good at, like, something like, you know, multimodality.
+
+Speaker 1 | 19:11 - 19:31
+Somehow you see some regression on, you know, the coding and and you make it look good at like coding and multimodality. It becomes a little slightly worse than than a model that you had, like, you know, like math and reason. So so it's hard to to kinda find a balance. And and part of it is because post training does a little bit of a like, a overfitting. You know?
+
+Speaker 1 | 19:31 - 19:49
+Like like, at the end of the day, when you post train the model, you are trying to overfit it to the best local optima you have. When recipe becomes, like, how can I find the best local optima? It becomes the problem of, okay, there's no local optima that is good for everything. So I need to kinda choose. Right?
+
+Speaker 1 | 19:49 - 20:34
+And then like seeing this, you end up with like making some decisions along the way and saying that, okay, you know, maybe for me at this stage, because of the meat that I have in my organization, like with respect to the competition that is going on, I need to choose, you know, this specific axis. Like, you know, for example, some companies have, like, a very strong fortress on coding, which is, okay, you know, I I make my job, like, super easy, you know, like or or not super easy, but, like, much easier than than the competitors that they want to basically shoot a model that is good across the board. I think short term, it's, like, very, very effective because, first of all, during development, you care less about, you know, like, all the dimensions. So maybe it's just faster to retrade. Like, you you kind of free up some space from the mind of your researchers and engineers that, okay.
+
+Speaker 1 | 20:34 - 20:48
+You know, like, forget about this. Just let's push this to the max. And then the other one is also, like, you don't hit the the trade off, like, immediately. And, especially this model is that, like, okay. You know, I'm gonna pick this specific axis and then make the model look really, really good at this.
+
+Speaker 1 | 20:48 - 20:56
+Sometimes, again, like this this is a decision based on, the place that you are at, know, again, like organizationally, like competitors, like and stuff like that.
+
+Speaker 2 | 20:56 - 21:20
+Great. You said something a few minutes ago that I thought was so intriguing, which is this idea that the corepathies of the world and you of the world could be automated. What happens if like the brightest minds in the world get automated then the AI creates itself? Like at some point is there just no one knows how the AI works? Is is that an actual possible future?
+
+Speaker 1 | 21:20 - 21:31
+The dispatch is very philosophical. I don't know. Well, let me let me give you one quick things that I I thought about it a few a few days ago. I have a daughter. She is, like, one and a half years old.
+
+Speaker 1 | 21:31 - 21:46
+I've been impressed over the past few years. Like, very interestingly, like, I've been proven wrong multiple times about, like, the the the timeline that I had in mind. For example, sometimes I say, like, oh, this is gonna happen in six months. Never happened. Sometimes, like, oh, this is just, like, so hard.
+
+Speaker 1 | 21:46 - 22:03
+Like, within the next ten years, there's absolutely no chance to solve it. And then boom, like, in two months, three months, someone had a brilliant idea and they solved it. So so it's like really hard to predict the future. And I was thinking like, okay, you know, like so you're talking about, like like, catapathy and and, like, you know, again, like other researchers. But I'm thinking about, okay.
+
+Speaker 1 | 22:03 - 22:09
+Like, what about the next generation? You know? If if, like, my daughter at some point comes to me and asks, like, okay. Like, what should I do? You know?
+
+Speaker 1 | 22:09 - 22:25
+Like, what do you recommend to study? Like, what major and, like, you know, what branch of the the science or or or research should I kinda, like, you know, dig in and and, like, be the expert on? I I really don't have a good answer. You know? Like, almost it doesn't exist, and and it's just, like, really hard to predict the future.
+
+Speaker 1 | 22:25 - 23:24
+What I know is there are a few skills that are probably key to be able to to make impact in this world and also be relevant, staying relevant. Like, one of them is like a strategic and and having all the parameters on your table when you're making a decision and and becoming absolute expert about a a very specific subject most likely is not gonna be useful in in in, like, like, the near future. I think, like, you know, the brilliance of Chiapathy is not like, you know, he's a good programmer or he's a good definitely, he's a good teacher, you know, but but I'm I'm saying, like, you know, these are not, like, the most impressive part of it. Like, the most impressive part for me is that he has a really good overall view of, like, what is happening. Like, by putting himself in in the in the in the, like, the the stream of information, he can make a decision about, okay, what is the next most impactful thing to do?
+
+Speaker 1 | 23:24 - 23:40
+And now, like, you know, the things that he does to make impact is very different from, like, you know, the things that he used to do, like, five years ago. And I think he can be able to do that, like, continue doing that. You know? Like, what is that the things that he's gonna do he's gonna be doing, like, in, like, in five years? I don't know.
+
+Speaker 1 | 23:40 - 23:45
+But I know it's like he's smart enough to figure it out and and still keep making impact on on the board.
+
+Speaker 2 | 23:45 - 23:50
+So AI researchers are not, researching their way, out of a job just yet.
+
+Speaker 1 | 23:51 - 23:54
+Hopefully we are smart enough to do that.
+
+Speaker 2 | 23:55 - 24:08
+All right maybe that's more of a macro question as I think about, you know, where where the value lands in this ecosystem but if AI just keeps creating itself then does is data still needed in that equation or is that all compute?
+
+Speaker 1 | 24:08 - 24:37
+Concept of data is a little bit like broader than just like, you know, tokens. Right? Like and and if you think about data as, whatever that the model can get signal from, either it is like predicting the next token in raw text, which we kind of like, you know, use in print training or super complex environment that the model interacts with and then get signal. This is something that basically like we can we can refer to it as like data. Right.
+
+Speaker 1 | 24:37 - 25:12
+And it's not like data or or, like, the value of, like, having good data or working on data is gonna disappear and compute is going to become, like, the only things. At the end of the day, I think, like, the board that we're doing on the data side most likely is going to shift toward building environments or or making sure that these models can interact with with physical words. And then it becomes more of a problem of, okay, how can we, like, provide more grounding for these bottles? They are good at, like, improving themselves, but as long as, like, you know, I I have I I expose them to real work data. Right?
+
+Speaker 1 | 25:12 - 25:35
+Like and and, like, you know, real work environment. So providing data becomes more about, okay, how can I give, access to this specific, like, model to something that, you know, we never had? For example, like, I again, like, something came to my mind, which is, like, again, like, a little bit sci fi, but how can I make, like, smell accessible to these models? You know? Like like right now, it does it like there's no good way.
+
+Speaker 1 | 25:35 - 25:49
+But then data becomes like, okay, you know, like information or or anything that is for us because of all the sensory that we have is like really easy. You know? Like right now, I'm sitting here. I know how hard is my chair. What is the temperature of this room?
+
+Speaker 1 | 25:49 - 26:15
+All this sensory information is something that is coming to me. And then I'm like, the the next board that I'm saying is based on all this input. Right? And then providing this for a model that does self improvement is already a really hard problem. So I would say that the the work on the data would shift toward making these sensory information more available to these models in a way that that enables them to really improve themselves given all this information in a more effective way.
+
+Speaker 2 | 26:15 - 26:21
+Yeah. Interesting. Yeah. There seems to be a big trend towards sensors as a service. We're seeing the startups emerge in that field.
+
+Speaker 2 | 26:21 - 26:47
+Okay. Super, super interesting. Zooming out from self improvement for for, seconds, the big theme of the last year has been the acceleration of post training in addition to pre training. So the whole, you know, reinforcement learning aspect of things. Where do you expect gains to come from in the next, few months or or or or or is that more post training?
+
+Speaker 2 | 26:47 - 26:50
+Is that more good training? Is that both? Is that something else?
+
+Speaker 1 | 26:50 - 27:21
+The answer to this question really depends on when you actually ask this question. And, like, it's obvious that, like, you know, we're gonna be having a bit of a swing back and forth between pre training and post training. At the end of the day, I I I wanna say that, you know, pre training is still the foundation and, like, you can never post train your way out of a week based model. But right now, the current like, the return on post training is really strong. And I started working on post training myself, like, like, a few months ago, like Gemini post training, like, mostly coding and agentic.
+
+Speaker 1 | 27:21 - 27:57
+I can see how a brilliant small idea can make a model like 10x better, for example, in terms of behavior at a fraction of the cost of the pre training. Right? This is, again, like, know, we can we can see how post training is like like the place to make a lot of impact and improve these models. But on the other hand, like, I I know at different companies, also the case, but at the at GDM, a lot of exciting recent work is going into the pretraining side and, like, new new recipe, new ideas. And and and I would say, like, you know, the work that we're doing on the pretraining is going to unlock a lot of downstream possibilities.
+
+Speaker 1 | 27:57 - 28:14
+Post training is just like a different mode of operation. It's, like, also super interesting for me because I'm, again, like a little bit like new to to this to this side of the the the operation. But but at the end of the day, I always expect to see kill, like, like going on, like, know, between post training and pre training.
+
+Speaker 2 | 28:14 - 28:23
+Your comments on on pre training are against, like, that narrative that that appeared a few months ago that pre training was dead. That's not your take at all. Right?
+
+Speaker 1 | 28:23 - 28:53
+But I think everyone has ideas on pre training side. At the end of the day, like, going for that idea is a function of complexity and the expected gain. Right? And sometimes you feel that, okay, you know, there are low hanging fruits and and it like, you know, instead of bringing this complex, like, you know, recipe to the pretraining, the one that I have, like, which is simple, elegant, super scalable, I'm gonna push this, and then move the the effort to the posturing. And then at some point, like, the the base model becomes the bottleneck.
+
+Speaker 1 | 28:53 - 29:42
+And then you're happy to take the complex recipe and bring it to the pretending and then, like, keep pushing it. I think pretending is dead. I I would say, like, maybe, like, you know, the old it's also, like, a little bit, like, difficult to talk about old and new because, like, the the the time frame is, like, very different. So so when I say old, maybe I'm referring to, like, you know, two weeks ago or something. But but but the the way that we used to do pretraining maybe, like, you know, like, two a year ago or two years ago, maybe, like, you know, diminishing return is, like, obvious, but I can see how new ideas are are bringing, like, you know, fresh fresh, energy into the pretraining and suddenly just open a door to what, like, like something exotic that might actually drastically change, the base model capability over time.
+
+Speaker 2 | 29:42 - 30:06
+So exciting stuff for Gemini four when whenever it comes out. You mentioned continual learning earlier, and that's another one of those hot topics that people have been talking about. Can can you define continual learning for us so that this conversation is educational to for a broad group of people? Maybe compare and contrast that with the self improvement loop. Like, those are two different things, but, help us understand the the difference.
+
+Speaker 1 | 30:06 - 30:21
+Definitely, they're related, but, like, they're distinct. Right? So self improvement is about a model getting smarter over time and improving its capability, like the model itself doing it. Continual learning is mostly about a model staying current. Right?
+
+Speaker 1 | 30:21 - 30:51
+Like and and and think about a doctor that, like, keeps reading new research and they, like, refresh their their knowledge about stuff. And and, like, you know, they're trying to make sure that, you know, their knowledge doesn't go stale. The shared enemy between, like, self improvement and and continual learning is a model with frozen weights over time while the the board is just, like, going. Right? Like, you know, if if you have if you have a model that is just frozen and the board is moving, then, like, you you neither get, like, self improvement nor nor continue learning.
+
+Speaker 1 | 30:51 - 31:28
+But continue learning is mostly focused on making sure that, you know, if there's, like, fresh knowledge in the board, like, the my the model knowledge cutoff is not, like, in the past. So it's constantly, you know, like, for example, overnight, all the news, everything that is happening in the board, everything is just, like, you know, updated. So if today you ask a problem if you ask a question from the model, those knowledge, which is, like, super fresh is already in the weight of the model. So it's it it doesn't have to kinda, like, you know, depend on external source to to to bring it And it's hard. It's, like, really, really hard.
+
+Speaker 1 | 31:28 - 31:53
+And the biggest problem like, not the biggest, but, like, one of the big problem is, like, catastrophic forgetting where you get your model to to learn about new information after you're done training that model, like, you know, and then and suddenly you see regression in in in the knowledge that you learn already in in the in the main training phase. And it's a very active, adjunct area of research right now.
+
+Speaker 2 | 31:53 - 32:02
+And, what's the reality of continual learning as of now? Is that is that built into existing systems? Not at all about to?
+
+Speaker 1 | 32:02 - 32:34
+There there are two sides of it. Like, one side is I think, like, the research is not, like, yet to a very like to a point that you you think that, oh, you know, this is this is the recipe. You know, I just need to kind of like, you know, exploit it and push productionization. Right. But basically, you know, like every time that you have a new prop that is like key, you have this phase of exploration where people, like, try to kinda, like, you know, try different ideas and, you know, like, go jump over this, like, idea to another idea, which could be, like, so different.
+
+Speaker 1 | 32:34 - 32:55
+And then when you're confident about this kind of working to some extent, you go to the exploitation mode and say that, oh, you know, let me just make it as good as it can be. And, you know, this is the way to to kind of push it. And and let's scale it. Let's just, like, you know, develop infra for it, make it, like, super fast, like, you know, productionize it, and see what happens. I feel like that that is not yet there.
+
+Speaker 1 | 32:55 - 33:29
+The other point is also, again, like, as I said, because we we've never had, like, like, super confident recipe for continued learning. Like, building infra for investing in in something that is, like, fast is hard. Given that, like, I've I've seen like very impressive progress on this, of the Sweden GM and GDM. It's it's kinda interesting because it is one of the things that, you know, it can be heavily theoretical. I've I've seen people who are like, you know, like doing a lot of theory work and they got into this, like, problem and they're having a lot of fun and they're also, like, making a lot of impact.
+
+Speaker 1 | 33:29 - 33:42
+And it's impressive how much progress we made on on this, but I don't think that, you know, we have yet, like, like any any idea that, like, like everyone says that, oh, you know, this is it. You know, like, let's just do it. You know, like, let's push this.
+
+Speaker 2 | 33:42 - 33:55
+Great. I'd love to talk about you and and your background. Tell us your your story in a few minutes. Like, how did you come to do this work and what was your journey to AI and then your journey to to Google DeepMind?
+
+Speaker 1 | 33:55 - 34:31
+So I I did my PhD at University of Amsterdam on machine learning and and mostly on the on the, like, the language model side and text and and search and retrieval. And then I think what kind of, like, pushed me toward trying really hard to be on the, like, on the on the mainstream and be part of this group that are, like, you know, hustling to to make, like, really good progress. I did a few internship, like, back in 2016 and 2017. And and and the funny story is, I I did an internship in at Google Brain in '20 like, early twenty seventeen. And then it was amazing.
+
+Speaker 1 | 34:31 - 34:44
+It was just like, you know, I I went to to to this team. They were working on, like, LSDMs for, you know, like, summarization. Summarization was actually one of the most, like, interesting problems at that time. I was, like, amazed. I was like, so this is so good.
+
+Speaker 1 | 34:44 - 35:00
+I I real I just want to keep doing this for the rest of my life. You know, this is it. And then I got a I got a return offer to go back and then do another internship at the end of the the same year. The recruiter told me that, oh, you know, there's this team that they just published a paper. Maybe you've heard about it like Transformer.
+
+Speaker 1 | 35:00 - 35:17
+And then they're looking for an intern. And I haven't had a chat with I I remembered I had a chat I had a chat with Lukasz Keyser. And then Lukasz was talking to me and saying like, oh, yeah. Like, we have this idea of building, like, a Kolmogorf machine based on Transformer. And he was so excited about this.
+
+Speaker 1 | 35:17 - 35:36
+And then, like, you know, we, like, we finished up the the the conversation, and I started sort of sending a message to recruiter. I was like, I don't know if I wanna go with this team. It's just like, they're doing something random. Like, who like, like, everybody's doing LSTM, but why should I go and and work with a, like, a a group of people who are working on this, like, random market, like, share, like, transformer? It's just like, it's gonna die.
+
+Speaker 1 | 35:36 - 36:10
+You know? And then he tried, and he couldn't find any other team for me to to join. So I joined this team as an intern, and that changed my life. You know, like, like being among these, like, brilliant, like, super smart people that they believed in in some vision and direction where almost everyone was excited about something else was, like, very inspiring. And then we work on on like, again, like this called Mogorov machine, like idea for the question turned into like, you know, universal transformer prepare, which, you know, like recursion in depths and reusing parameters was was coming out of it.
+
+Speaker 1 | 36:10 - 36:13
+And still, they have, making a lot of impacts after almost, like, ten years.
+
+Speaker 2 | 36:13 - 36:25
+Tell us about that, quickly. So that was in 2019, I believe, and you you It was you were a coauthor of that paper. And that was very much that idea that we started with right at the beginning of this conversation of, like, loops and recursive stuff.
+
+Speaker 1 | 36:26 - 36:59
+Universal transformer, like we wrote that paper in 2018 and I think it was also rejected one time from one conference, and it was accepted in 2019. I don't remember exactly, but yeah. Yeah, I think it was accepted iCareer, but it was rejected from NeurIPS or something. The whole intuition was there is something about reusing parameters and a model going through its output another time, you know, like, and and so so basically you generate something and then you kinda like, you know, pass it into the model again. And then the model has the chance of doing this.
+
+Speaker 1 | 36:59 - 37:36
+So we started with like, I I remember Lukas had this, like, algorithmic dataset, which, I remember he he used to call it, like, algorithmic tasks, and and it was part of this code base based on TensorFlow, like Tensor2Tensor. It it was the name of the code that's still there. And and I remember I I can even find my put request into that for for pushing the universal transformer code. And we saw that, basically, there are some problems, like copying an input to the output or, you know, like doing something algorithmic with like super long input on the output side, which is super easy. But the normal models, the normal transformer was like failing awfully at this.
+
+Speaker 1 | 37:36 - 38:16
+And we saw that, you know, like looping is like do it perfectly. And then at that point, I remember we had this baddie, like dataset from, from Meta and it was like doing great on that. And then the idea of test and compute, which basically you train with fixed amount of compute, but at test time, you unleash your model to do more computation, throwing more flops on the input was coming to our mind. Like, super excited about this. And then we ended up with actually kind of like introducing this adaptive computation mechanism into this, which was, again, like like some sort of inspiration from Alex, like Alex's paper, like, you know, from from LSTM.
+
+Speaker 1 | 38:16 - 38:45
+And then like, a very interesting interesting ride because we we were pushing for something that, like, at that time, it it sounded exciting, but and and I have a guess. I mean, like, maybe at that time, like, the whole field was a bit too focused on using adaptive computation for decreasing the cost on simple problem. But now we know that maybe we can actually use adaptive computation to increasing to increase the cost for hard problem. You know, it's actually like the other side of the same coin. Right?
+
+Speaker 1 | 38:45 - 39:16
+So because at that time, you were like, you know, like, maybe, you know, like, resource constraint and everything. So we were really thinking about why we were spending so much FOPS, like, you know, going through all the layers and, like, you know, everything's for dot, like, at the end of the sentence, if that that token is like, do we really need, like, 24 layers? So how we can decrease that? But now we we have a different perspective to that, which is like, you know, how can we increase this for a physics problem that we want to run the the the inference for maybe like, you know, for two weeks. So that was that was really fun to work on that with with these like brilliant people.
+
+Speaker 1 | 39:16 - 39:55
+And and I think like, you know, just recursion in-depth and reusing the parameters or I've seen later, like some some people actually framing it as negative as sparsity, which is a great way of, you know, like, connecting it to mixture of experts that, you know, in mixture of experts, you have flops free parameters. So so parameters that you that they're not actually bringing any flops. And in in, like, looping, you have a parameter free flops where you don't have extra parameters for the extra flops that you are throwing on this. So it goes the other direction of the sparsity, and it's quite effective. And and I think people are picking it up, you know, so that we're we're seeing a lot of, you know, the excitement in this direction.
+
+Speaker 2 | 39:55 - 40:12
+Fascinating. Another fundamentally important contribution to the field that, you did was the visual transformer paper in 2022. So the paper was called An Image is Worse, 16 by 16 Transformers for Image Recognition at Scale. Do you wanna walk us through what that was?
+
+Speaker 1 | 40:12 - 40:29
+That's also there's also a funny story for that. I got into vision and multimodality with that paper. So I've I've never worked on on on, like, any vision problem. It was mostly because I was sitting next to people who are working on vision. So, like, my desk was, like, next to people who were working on vision, and that was the reason that I got interested because I was just talking to them.
+
+Speaker 1 | 40:29 - 40:59
+I was like, oh, this is actually interesting. And and then and then I remembered that at at that time, I was, working on on, like externally we call it Palm, Palm paper with like, you know, a contra and other folks. And I was like, why we have 400,000,000,000 parameter language models? But the biggest model that we have on the vision side is just like maybe a 100,000,000, like a ResNet. Like, why like like, why there's no benefit of a scaling?
+
+Speaker 1 | 40:59 - 41:20
+Started looking into this with with folks on like, okay. Like, maybe, you know, like, there's something in transformer that actually kinda, you know, make it a scalable. And then maybe, you know, like, we we can move away from convolution to try this. And and at the end of the day, I I don't wanna say that, you know, like, that's the only way of scaling. Maybe, you know, if a group actually spent, like, enough time on convolution, they can also make it a scalable and, like, you know, like, as good.
+
+Speaker 1 | 41:20 - 41:46
+But there was also benefit of doing that simply because the rest of the the the machine learning field, which was working on on on language, they were using this, like, like, architecture. So they were building infra for it, making it faster. And and, you know, like like the sometimes the the hardware hardware is kind of like designed based on this architecture, at least for short term. So we started pushing. And then I remember that, you know, we had, we had a bunch of ideas that, okay, what if each pixel is a token?
+
+Speaker 1 | 41:46 - 42:02
+And then like the cost was going high. The context was just like getting super long. And then we had a lot of back and forth. And it's also quite funny because we started thinking about this problem, like, from, like, very complicated point of view. So we were trying to mimic convolutions to be able to get this working.
+
+Speaker 1 | 42:02 - 42:31
+And it ended up like, you know, like, I I had a bunch of colleagues also in Missouri, and they started, like, trying the simple idea of what if we just, like, divide the image into patches of pixel, you know, 16 by 16, and then get each patch as a pixel and forget about, you know, like overlapping patches or, you know, like windows and stuff like that. That's it. You know? Like, know, like, chop the image and then feed it to a transformer and then scale, you know, like like, go with a lot of data. And then, like, let's start with, like, you know, something discriminating to train this model.
+
+Speaker 1 | 42:31 - 42:56
+And it worked. And it it was also a little bit, like, of a surprise for us that, oh, you know, like, we're they were all thinking about something, like, you know, fancy and and very, very complicated, maybe in the integration of having, like, you know, like convolutions and stuff. But something that worked was basically the simple idea of, you know, like, Patchify, fit it to transformer, scale it up, and then boom, you had a really, really good model for representation learning.
+
+Speaker 2 | 42:56 - 43:23
+Yep. And to play it back at the the highest level that basically meant that you could apply a transformer architecture to image wherein in the past you had two different families, you had the CNN world and the transformer world for text and your breakthrough was to prove that transformer could scale equally well to images, which basically paved the way to a Gemini three today, which is like a natively multimodal model. Is that Is that fair? Okay.
+
+Speaker 1 | 43:23 - 43:46
+Yeah. That is true. Yeah. Like, basically, we we collect with that, we kind of took a step toward having also videos, like adapting transformers and and audio, like, you know, adapting transformers. So basically we like, again, like, even even if this is not like the only architecture that would be like in a multimodal, but it made it really simple to train these models like natively because you have like a single architecture and can have all the modalities in during training.
+
+Speaker 2 | 43:46 - 44:16
+Great. So that's a perfect transition into your work into Nanobanana and the future of, image AI. So you are part of the Nano Banana team, which must have been so much fun when this came out and went to just completely viral and what an incredible product. So since then, there's been a couple of releases. So there's been a Nano Banana Pro in November 2025, and then just a few weeks ago, Nano Banana two, aka Gemini 3.1 flash image, yeah, at the February.
+
+Speaker 2 | 44:16 - 44:40
+So a lot of people assume that image generation works as a translator, meaning that the AI reads the text of the prompt and then translates it into picture instructions and then draws it. But as we were saying, Gemini is natively multimodal. So how does how does that work? How does a model actually process the the text and the pixels at the at the same time to build the image?
+
+Speaker 1 | 44:40 - 45:04
+I think the reason that maybe I got to the generation okay. By the way, there's also one one one thing that I I'm not an expert in image generation. Like, when I started working on this, I remember I had like meetings with people and then they were talking about like, you know, computer graphic and all the, like, you know, like old like ideas about or like intuitions. And I had like zero idea what's going on. I was like, I know how to train and transform and scale it.
+
+Speaker 1 | 45:04 - 45:38
+And and, you know, if it helps, I I I can I can basically contribute to this? But again, like, you know, it was fun because I I worked with, a a group of, like, super smart, like, brilliant people with, like, really, really good intuition. And I think, like, the reason that I was excited about this was, like like, this is maybe not super relevant to, like, Nunavana itself, but to just mention this, I was excited about the idea of, like, positive transfer across modalities. So when you when you think about multimodal, like, natively, one part of it is that, oh, you know, I'm adding capability to my model. You know?
+
+Speaker 1 | 45:38 - 45:53
+So my model can understand images and understand videos and understand audio, but also, like, like and text, but also can generate all these modalities. You know? Like, so so I have a a model that actually does all these together. Right? This is for sure exciting, like, from the product point of view.
+
+Speaker 1 | 45:53 - 46:24
+You know? Like, you have a model that is, like, you know, great model for for generating all these different, like, outputs and and, like, users are, like, finding it, like, very useful and interesting. But the the the most exciting part for me was, can I see a glimpse of transfer from these modalities? Like, you know, like, for example, if I train a model to become good at image with generating image Does it become also good at, like, better at, like, generating text? There are different, like, different intuition of that, you know, like why this should happen.
+
+Speaker 1 | 46:24 - 46:40
+I think there's like something like, again, like, old in the literature on on the linguistic side that they call it reporting biases. Right? So you you for for example, you know, like, visit your friend's place. Right? And then you go to their place and then you see that they have a banana shaped, like, like, a sofa.
+
+Speaker 1 | 46:41 - 47:01
+When you go home, the chance of talking about that sofa compared to a a normal sofa is, like, much higher. So you can actually talk to your friends or partner later. Oh, you know, I went there, and then their sofa was, like, in the shit called banana, which was really fun. But if it's, like, normal, like, you almost like, it's weird if you go somewhere. It's like, oh, by the way, went to my friend's place, and they had a sofa, which was, like, super normal.
+
+Speaker 1 | 47:01 - 47:17
+So so this is this is the language reporting bias. So so so language doesn't talk about things that are, like, at the middle of the distribution. Right? But if you have an image or or if you have, like, vision input from from anything in the world, you have that information. Like, there's no need for reporting it.
+
+Speaker 1 | 47:17 - 47:28
+It's just like there. Right? So so because of that, like, picking up a lot of knowledge about the board through language is just not really efficient. I I don't wanna say that it's impossible, but it's not efficient. You know?
+
+Speaker 1 | 47:28 - 47:46
+Like, to learn about gravity. If you kind of like, you know, have your model train on videos, it's much easier to to get the model to learn about gravity because it just happens in a video than training your model on on all the textbook to kinda like learn about the concept of gravity, you know, or or what is actually gravity.
+
+Speaker 2 | 47:46 - 47:50
+Is that a concept of world model that's built into the image representation?
+
+Speaker 1 | 47:50 - 48:05
+Exactly. Exactly. So so basically, you you want a Vault model, basically, you know, like these models to be also like a VOD model. So you you want these models to know about the word. It's a good chance that that you can actually teach your model about the word just by presenting text to it, but it's just not efficient.
+
+Speaker 1 | 48:06 - 48:28
+And and and a good shortcut would be to bring multimodality into this. And the best way of learning about modality is learning how to generate that. Right? Like, so we we got to this point that, okay, you know, we've been we've been having Gemini generating, like, images from Gemini one. So we like like, basically, like, Gemini was multimodal from day one.
+
+Speaker 1 | 48:28 - 49:02
+And and the reason that we kind of first, like, released the image generation at, 2.5 instead of, you know, like, Gemini one, Gemini 1.5, Gemini two was that it was not great. And then, like, it really needed a push. And then we figured out that, okay, you know how to push this without, like, you know, introducing any regression to other capabilities that the model has and, you know, like, bring all of these natively into the into, like, this this model. And that was, like, one side that was, like, super interesting for me. Like, not the sad news, but but but it's really hard to see positive transfer.
+
+Speaker 1 | 49:02 - 49:19
+So it it turned out to be a really, really good model, but it was, like, really hard to see that, wow. You know, I train on images, and then, like, text perplexity goes down. That that was hard to see. You know? Like, the fact that, you know, you you train a native model and it's good at at, like, across all the capabilities is already impressive.
+
+Speaker 1 | 49:19 - 49:40
+But my hope is that, you know, multimodality and work model is the way to really push multimodal training to to enable, like, positive transfer across modalities. I've worked with people that they were, like, expert on this. You know? For example, one of the one of the things that I remember that, you know, at at the beginning, they were talking about this, like, visual quality. And then I remember that, you know, it's like, oh, this model is a great model.
+
+Speaker 1 | 49:40 - 49:49
+I send them them. And there's, no. This is not a good model. I was like, what do you mean? And they they started showing me two images that to my eyes, they were, like, looking the same, but they were saying, no.
+
+Speaker 1 | 49:49 - 50:01
+This is, like, way better. Was like, no. They're the same. So so they had they had a good taste on on grasping the the visual quality of images. So working with them was, like, really interesting to kinda understand that, okay, there are dimensions.
+
+Speaker 1 | 50:01 - 50:33
+And by the way, like, their intuition was the was the the the things that actually make, like, not a banana, like, a success in terms of, you know, being a good product. But it was like, okay, what if we push this towards something beyond, like, traditional image generation? So instead of, like, a translator that, as you as you said, like a a text to image, it becomes a thinking machine about images. You know? For example, do you know you you enable interleaved text image generation where the model can think in not only text token, but also in pixel space.
+
+Speaker 1 | 50:33 - 50:52
+Right? So so it generates a text and then generates an image and it generates another text, another image, and you can leverage that for different problems. Like, one of them is that, oh, if you have, you know, like some sort of a story. Right? Like, you know, like, text of the story, image related to that, text of a story, like, you know, like children's storybook.
+
+Speaker 1 | 50:52 - 51:04
+Right? Another one, which I I was actually really excited about was, like, this incremental generation. Like, let me just give you an example. So if you take, like, DALL or Imagine or or a stand alone image model. Right?
+
+Speaker 1 | 51:05 - 51:20
+If you ask these models to generate an image of, like, you know, a scene with 50 details, they mark fate. Right? And then someone can say that, oh, you know, okay. I I can, like, generate a better model that, like, does up to 55 details. And then you say, okay.
+
+Speaker 1 | 51:20 - 51:36
+What about 60? And then I say, okay. No. Let let me just go back and trade it and then come back to you to cover your case. But at the end of the day, there's a threshold that these models can kinda, like, follow instruction to to, like, to some extent about, you know, how many details that they capture from from the text.
+
+Speaker 1 | 51:36 - 52:06
+But if you have incremental generation, so if you have text and then an image and text and image, you can get your model to generate these details one by one. So you you never expect your model to to generate an image, a perfect image in the first shot. Right? So so you expect model your model to plan about this generation. So it says that, oh, you know, let me start with big objects because, you know, later, I'm gonna have a hard time if I put, like, small objects and the big objects don't fit.
+
+Speaker 1 | 52:06 - 52:44
+Right? So let me just do that. And then, like, in the next turn, I go with, like, medium objects and and smaller and this is, like, super smart, you know, and you're never bottlenecked by the capability of a single shot image generation because you you did planning and then you tune every step difficulty to to match the capability of your model to generate one one shot. So that was also one of the things that, you know, not a banana and and native generation, interleaved generation kind of brought, like, a completely new perspective to image generation work, which is, like, a little bit, like, far from, like, you know, just translating text into an image.
+
+Speaker 2 | 52:44 - 53:01
+Fascinating. Does part of this contribute to efficiency? So, especially Nanobarana two, you have the flash aspect of this. So you're able to create amazing images very fast and apparently, I mean, seemingly very efficiently. So what's what's behind the scenes?
+
+Speaker 2 | 53:01 - 53:04
+Is what you described? Is that MOE? How are you able to do that?
+
+Speaker 1 | 53:04 - 53:28
+First of all, I was I was involved in the original Nano Banana Nano Banana Pro. And then the last version, get like, you know, because I I jumped on the post training and coding an agent, and I find it exciting. This one like, this the team actually shipped it. But if I want to say, like, like, super high level that, you know, what is exactly the things that makes the model, like, like, faster and more efficient, Part of it is just the size of the model. So, like, Nunabanana was pro size, and this one is just, like, flash.
+
+Speaker 1 | 53:28 - 54:10
+So definitely the the the parameter size, like, know, configuration of the MOE and stuff. The other one was people actually spent quite a lot of time on figuring out like, you know, like nailing down like distillation recipe, both on the side of like knowledge and like, you know, other like things that basically you, you kind of like need to distill to something like a process that is like, you know, lighter than the full process. Surprisingly, a lot of infra work for serving. So we have, like, really, really, really brilliant people that they're, like, you know, serving engineers. And it's kind of impressive that, like, you sit on your desk and then, like, they they come and they say, oh, by the way, but casually, I make the model 10 x faster.
+
+Speaker 1 | 54:10 - 54:32
+I was like, you know, like, it's just like and and they're just kinda saying it, like, you know, in a very, like, in a casual way. It's like, wow. This is, impressive. We had also a lot of work on the on on optimizing the serving, how to serve these models and and, you know, like, again, like, because these models are operating differently from, like, just, like, normal language model. Like, they're not necessarily, you know, like, the same as, you know, next order prediction.
+
+Speaker 1 | 54:33 - 54:44
+This is definitely something that, you know, a good serving engineer can figure out that, okay, you know, I can think about a different way of doing that. And we had also a lot of improvement on the efficiency side by by their work.
+
+Speaker 2 | 54:44 - 54:51
+Alright. So as we get towards the end of this conversation, I thought it'd be fun to end with a few, hot takes if you're ready for them.
+
+Speaker 1 | 54:51 - 54:52
+Yeah, absolutely.
+
+Speaker 2 | 54:52 - 54:57
+All right. What is one thing the AI field is getting wrong right now?
+
+Speaker 1 | 54:58 - 55:38
+Not easy to pinpoint like specific things, but again, like, you know, this is just like my personal opinion and and maybe I have colleagues and and like other people like sharing this with me, but I think we're underestimating how hard like, jagged intelligence is to fix. We're missing how like, like, understand like, under like, we're underestimating how much it matters. And we talk about almost, like, people laugh and and and go. You know? Like, if if you have a model that does, like, a like, a very difficult, like, math proof, but has difficult time, like, counting, like, letters in a in a word, as I said, just people just laugh and and move on.
+
+Speaker 1 | 55:38 - 56:06
+But but I think it actually, like, pointing at something, like, deep and unresolved about this system. Like, the the way that these systems kinda, represent and process knowledge. And it's not a bug that you can patch. So definitely, you know, like like we we like we we see that, you know, this is happening, you know, like people sometimes, you know, like or or we have these problems that, you know, something is, like, awfully sad. And then you can oh, you know, let me just, you know, patch by adding something for the system instruction or the opener instruction.
+
+Speaker 1 | 56:06 - 56:17
+A bit of a structural property of how these models actually learn. So I I would say this is probably one of the things that we're we're not getting it, like, super right at this point.
+
+Speaker 2 | 56:17 - 56:21
+Great. What is one idea in AI research right now that is underrated?
+
+Speaker 1 | 56:21 - 56:46
+Something that is underrated, like you mentioned, continual learning. I think this is this is definitely underrated. As I said, you know, like sometimes the problem stays in the exploration mode, until we are confident about something and then it goes to the exploitation mode. I I think we are past the time that we really had to push this to exploitation. So maybe, like, foundation models are are essentially right now, like, frozen in time and, like, when the the training ends.
+
+Speaker 1 | 56:46 - 57:08
+Right? And then everything is, like, built on top of this frozen model, like in a rag pipeline and and fine tuning workflows and retrieval system. And all these, like, elaborate, like, infrastructure is, like, all based on this assumption that these models are frozen. And it's a bit of a like, too much of a strong problem. There's assumption to make.
+
+Speaker 1 | 57:08 - 57:26
+And and and I think, like, we are going to like get to the point that we need to change these assumptions and like maybe like we need to think about it a little bit more actively and have pushing it toward like, you know, something that we actually push it to productionization. And maybe it's a little bit, like, underrated right now, like, continuity.
+
+Speaker 2 | 57:26 - 57:28
+So you think RAG goes away over time?
+
+Speaker 1 | 57:28 - 58:08
+It's not gonna look like as is today, and and it's gonna be different. But, like, saying that it's gonna go away completely, I'm I'm not sure about that. And and one of the reason that I say that is RAG is not just about bringing, like, fresh information to the model when when it wants to kinda, like, solve a problem about, like, the current state of things, but it also has this kinda, like, in context learning. And and there is a difference between in context learning, like the information that you have in in the context of the model compared to the to the information that you have in the weight of the model. Like, continual learning and and RAC are are doing different things for bringing this fresh information.
+
+Speaker 1 | 58:08 - 58:19
+Maybe it changes in a way that, you know, like, it doesn't need to trigger Rag for, like, everything. But I'm pretty sure that they're gonna be some tail of the distribution that we're gonna do Rag still for it. You know? Like like, what's the tie?
+
+Speaker 2 | 58:19 - 58:24
+Alright. Last couple of hot takes. What do you think people are too confident about?
+
+Speaker 1 | 58:24 - 59:04
+So people think that, you know, the pushing the technical side is is sufficient. That if we just, get a model that is smarter, everything is gonna follow. And and in my opinion, like a version of AI that is like, you know, really, really brilliant at, like, technical problems, but it has a, like, a blind spot about, you know, everything else. And that version is not gonna be able to actually create meaningful prog like, progress in in in the war. And the the fact that, you know, people kinda assume and and confident about like like, they're they're confident about this, that that kinda, you know, everything is gonna everything else is gonna follow or or just everything else is just like a small list.
+
+Speaker 1 | 59:04 - 59:15
+I think it's wrong. Like, you know, we have governance. We have, like, you know, regulation. We have social trust. We have, like, for example, distribution of access and the benefit, like, in the world for for for this technology.
+
+Speaker 1 | 59:16 - 59:49
+And even the like, you know, the institutional capacity to to kinda, like, absorb and adapt this technology is is just, like, this is something that maybe we we don't have enough, like, attention to. And and and these are not really soft problems. If not harder than the technical part. They're they're really hard. And with the pace of technical progress is definitely, like like, currently running ahead of the board's capacity to to develop this kind of like, you know, mechanism, and this gap is getting like, you know, bigger and bigger.
+
+Speaker 1 | 59:49 - 59:56
+But what I'm saying is basically, like, you know, the field needs to hold both things at once. So maybe that's yeah. That's one of the things.
+
+Speaker 2 | 59:56 - 1:00:08
+Alright. And last one, and I don't know if that's a hot take or maybe just, advice for anybody entering the field today. If you are going to start from scratch today, what would you work on?
+
+Speaker 1 | 1:00:09 - 1:00:24
+I don't wanna start from scratch. It's hard to start. I can tell you, like, you know, there are there are two things that I I think, like, you know, would be nice to spend more time on it. And there's one thing that I'm, like, very excited about it. I start from the the things that I'm, like, really excited about it.
+
+Speaker 1 | 1:00:24 - 1:00:42
+And and I would say, like, in a short term, it's, like, really exciting to push it. I am actually trying to even, like, you know, be able to contribute to to this direction. And and that's, like, full automation of, like, super long horizon task. Things that, you know, like, you have a machine working for maybe, like, two weeks, one month. Like, the the agents today are are very impressive.
+
+Speaker 1 | 1:00:42 - 1:01:04
+Right? And and and the demos are, very, like, very remarkable. But, like, there's this compounding reliability problem that doesn't get talked about, like, you know, enough. And and for example, like, imagine if an agent has to take 100 sequential steps to complete the task. And imagine if each step has 95% of, like, success rate, which is, like, great.
+
+Speaker 1 | 1:01:04 - 1:01:25
+You know? Like, I like given the the the models that we have today, 95% is, like, really good. The probability of completing the whole task without a senior failure is, like, point nine five to the power of 100, which which is, like, less than 1%. And and this math is, like, brutal. Right?
+
+Speaker 1 | 1:01:25 - 1:02:08
+Like, you know, and and this, like, 95 per step, 95% per step, as I said, is, like, very, very optimistic. Long horizon automation is, like, like, definitely isn't impossible, but it requires a level of, like, you know, per step reliability and and, like, you know, error recovery and and and the current system maybe don't have it. And if if we want, like, you know, social trust and and, you know, basically having, like, people, like, really using it. You know, at at the end of the day, like like, people don't experience average performance of these models, then they experience, like, the failures. If you have your model doing a dumb mistake, the the damage in the trust that it makes is, like, bigger than than, like, you know, the benefit of getting 100 things right.
+
+Speaker 1 | 1:02:08 - 1:02:40
+Right? Like, 100 imperfect things right. So this, like, reliability in this, like, long horizon task is something that we definitely The kind of, like, side of as I said, you know, two two kind of, like, more philosophical high level things. I would definitely, like, work on grounding problem and how we can build AI system that are robust and connected to physical world. As I said, you know, like like, soon, like, the the concept of data, like, you know, how to kinda, like, you know, enable these models to kinda, like, you know, be very good at, like, self improvement becomes how can I ground these models in in real world?
+
+Speaker 1 | 1:02:40 - 1:03:06
+So this is definitely, like, something that, you know, would be the bottleneck of self improvement if we don't actively think about it. We should definitely move away from, like, this is this statistical pattern in text and pixels. And the other things that is maybe kinda, like, you know, related is if I'm thinking about, you know, a better definition of, intelligence itself. Right? And a little bit like philosophical, but but it's definitely a practical practical question.
+
+Speaker 1 | 1:03:07 - 1:03:37
+And, like, the whole field and and us, we're we're building, like, more and more, like, something that we haven't, like, really defined. You know? Like like, we're we're trying to kinda make these models smarter and more intelligent, but, like, the definition of intelligent is just so hand wavy and fuzzy that it's hard to actually kind of, like, you know, measure the meaningful progress, like, which is related to your question that about, you know, like, how about, like, evaluations? It's good. You know, we have prices, benchmarks, scores, capabilities, and and and even vibes, you know, which is I I find, like, super useful.
+
+Speaker 1 | 1:03:37 - 1:03:57
+But at the end of the day, we really need a systematic way of maybe defining intelligence that that is hard. And again, like making progress based on what we have right now is good. But at some point that becomes a little bit more important to really pinpoint that, you know, what is the target and what is the goal and then push toward that, like with maximum speed.
+
+Speaker 2 | 1:03:57 - 1:04:05
+All right, Mostafa, it's been a absolutely fantastic conversation. Thank you so much for spending time with us. Really enjoyed it. Really appreciate it. Thank you.
+
+Speaker 1 | 1:04:06 - 1:04:11
+Thank you so much for having me, it was fun to chat and thanks for the invite.
+
+Speaker 2 | 1:04:12 - 1:04:31
+Hi, it's Matt Turk again, thanks for listening to this episode of the MAD Podcast. If you enjoyed it, we'd be very grateful if you would consider subscribing if you haven't already or leaving a positive review or comment on whichever platform you're watching this or listening to this episode from. This really helps us build a podcast and get great guests. Thanks and see you on the next episode.
+
+---
+
