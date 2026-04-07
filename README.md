@@ -7,34 +7,55 @@
 ## 🚀 核心价值
 
 - **深度追踪**: 实时/历史追踪 25 位顶级 AI 构建者的 X (Twitter) 动态。
-- **播客摘要**: 自动获取并总结《Latent Space》、《No Priors》等顶级 AI 播客的完整转录与 AI 摘要。
-- **官方技术动态**: 深度集成 Anthropic Engineering 和 Claude Blog 的深度技术公告。
-- **历史研究库**: 已聚合自 2026 年 3 月中旬起的 **767 条** 构建者原始动态和 **10 场** 核心播客的深度研究报告。
+- **播客摘要**: 自动获取并总结顶级 AI 播客的完整转录与 AI 摘要。
+- **官方技术动态**: 深度集成 Anthropic Engineering 和 Claude Blog。
+- **历史研究库**: 聚合自 2026 年 3 月中旬起的 **767 条** 构建者原始动态和 **10 场** 核心播客。
 
-## 📂 目录导航
+## 📂 快速导航 (研究报告)
 
-- [**ai_research_reports/**](./ai_research_reports/): **核心研究报告库**。按来源分类的 Markdown 报告。
-  - [**index.md**](./ai_research_reports/index.md): **全局导航索引**（推荐从此开始阅读）。
-- `follow-builders/`: 底层数据获取与处理引擎（基于 Node.js）。
-- `all_historical_data.json`: 聚合去重后的 1.2MB 历史原始数据集（JSON 格式）。
-- `extract_history.js`: 用于从 Git 历史提交中回溯并挖掘数据的提取脚本。
-- `generate_multi_reports.js`: 将原始 JSON 数据转换为精美分类 Markdown 报告的生成脚本。
+> 点击以下链接直接查看特定构建者或播客的详细历史研究报告。
 
-## 🎙️ 数据源概览
+### 🎙️ AI 播客 (Podcasts)
 
-### 追踪播客 (Podcasts)
-- **Latent Space**: AI 开发者与 chief scientists 的深度对话。
-- **No Priors**: 顶级 AI 投资者与创始人的对话。
-- **Training Data**: 关注 AI 训练底层的技术播客。
-- **Unsupervised Learning**: Redpoint AI 制作的前沿动态。
+| 节目名称 | 内容数量 | 链接报告 |
+| :--- | :--- | :--- |
+| Latent Space | 4 期 | [查看报告](./ai_research_reports/podcast_latent_space.md) |
+| AI & I by Every | 2 期 | [查看报告](./ai_research_reports/podcast_ai___i_by_every.md) |
+| No Priors | 1 期 | [查看报告](./ai_research_reports/podcast_no_priors.md) |
+| Unsupervised Learning | 1 期 | [查看报告](./ai_research_reports/podcast_unsupervised_learning.md) |
+| The MAD Podcast with Matt Turck | 1 期 | [查看报告](./ai_research_reports/podcast_the_mad_podcast_with_matt_turck.md) |
+| Training Data | 1 期 | [查看报告](./ai_research_reports/podcast_training_data.md) |
 
-### 核心构建者 (X/Twitter)
-包括但不限于：
-- **Andrej Karpathy** (@karpathy)
-- **Sam Altman** (@sama)
-- **Guillermo Rauch** (@rauchg) - Vercel CEO
-- **Swyx** (@swyx) - Latent Space
-- **Peter Yang** (@petergyang)
+### 🐦 AI 构建者 (X/Twitter)
+
+| 构建者姓名 | 账号 | 内容数量 | 链接报告 |
+| :--- | :--- | :--- | :--- |
+| Garry Tan | @garrytan | 89 条 | [查看报告](./ai_research_reports/x_garrytan.md) |
+| Peter Yang | @petergyang | 72 条 | [查看报告](./ai_research_reports/x_petergyang.md) |
+| Dan Shipper | @danshipper | 64 条 | [查看报告](./ai_research_reports/x_danshipper.md) |
+| Nan Yu | @thenanyu | 63 条 | [查看报告](./ai_research_reports/x_thenanyu.md) |
+| Swyx | @swyx | 59 条 | [查看报告](./ai_research_reports/x_swyx.md) |
+| Peter Steinberger | @steipete | 52 条 | [查看报告](./ai_research_reports/x_steipete.md) |
+| Zara Zhang | @zarazhangrui | 44 条 | [查看报告](./ai_research_reports/x_zarazhangrui.md) |
+| Thariq | @trq212 | 43 条 | [查看报告](./ai_research_reports/x_trq212.md) |
+| Nikunj Kothari | @nikunj | 43 条 | [查看报告](./ai_research_reports/x_nikunj.md) |
+| Amjad Masad | @amasad | 39 条 | [查看报告](./ai_research_reports/x_amasad.md) |
+| Aaron Levie | @levie | 28 条 | [查看报告](./ai_research_reports/x_levie.md) |
+| Guillermo Rauch | @rauchg | 25 条 | [查看报告](./ai_research_reports/x_rauchg.md) |
+| Aditya Agarwal | @adityaag | 22 条 | [查看报告](./ai_research_reports/x_adityaag.md) |
+| Andrej Karpathy | @karpathy | 18 条 | [查看报告](./ai_research_reports/x_karpathy.md) |
+| Claude | @claudeai | 17 条 | [查看报告](./ai_research_reports/x_claudeai.md) |
+| Matt Turck | @mattturck | 17 条 | [查看报告](./ai_research_reports/x_mattturck.md) |
+| Josh Woodward | @joshwoodward | 14 条 | [查看报告](./ai_research_reports/x_joshwoodward.md) |
+| Ryo Lu | @ryolu_ | 13 条 | [查看报告](./ai_research_reports/x_ryolu_.md) |
+| Sam Altman | @sama | 12 条 | [查看报告](./ai_research_reports/x_sama.md) |
+| Cat Wu | @_catwu | 10 条 | [查看报告](./ai_research_reports/x__catwu.md) |
+| Kevin Weil | @kevinweil | 8 条 | [查看报告](./ai_research_reports/x_kevinweil.md) |
+| Alex Albert | @alexalbert__ | 5 条 | [查看报告](./ai_research_reports/x_alexalbert__.md) |
+| Lenny Rachitsky | @lennysan | 4 条 | [查看报告](./ai_research_reports/x_lennysan.md) |
+| Amanda Askell | @AmandaAskell | 3 条 | [查看报告](./ai_research_reports/x_amandaaskell.md) |
+| Google Labs | @GoogleLabs | 2 条 | [查看报告](./ai_research_reports/x_googlelabs.md) |
+| Steven Johnson | @stevenbjohnson | 1 条 | [查看报告](./ai_research_reports/x_stevenbjohnson.md) |
 
 ## 🛠️ 如何更新数据
 
@@ -48,15 +69,12 @@
 
 2. **更新原始数据**:
    ```bash
-   # 仅更新不需要 API Key 的官方博客部分
    node generate-feed.js --blogs-only 
    ```
 
-3. **重新生成报告库**:
+3. **同步报告库**:
    ```bash
-   # 运行提取脚本更新全量数据集
    node extract_history.js
-   # 运行生成脚本更新 Markdown 报告
    node generate_multi_reports.js
    ```
 
