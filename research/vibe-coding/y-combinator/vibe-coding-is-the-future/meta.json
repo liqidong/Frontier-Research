@@ -1,0 +1,74 @@
+{
+  "videoId": "IACHfKmZMr8",
+  "title": "Vibe Coding Is The Future",
+  "channel": "Y Combinator",
+  "channelId": "UCcefcZRL2oaA_uBNeo5UOWg",
+  "description": "Andrej Karpathy recently coined the term “vibe coding” to describe how LLMs are getting so good that devs can simply “give in to the vibes, embrace exponentials, and forget that the code even exists.” We dive into this new way of programming and what it means for builders in the age of AI.\n\nApply to Y Combinator: https://ycombinator.com/apply\n\nChapters (Powered by https://bit.ly/chapterme-yc) -\n0:00 Intro\n0:42 What is vibe coding?\n1:00 What founders in the current YC batch are saying\n4:35 Debugging and building systems\n6:59 The models people are using now\n10:01 What percentage of code is being written by LLM’s?\n11:58 What changed and what stayed the same?\n18:08 How Triplebyte did candidate assessments and how would that change in this era\n21:37 Key skills that will remain relevant\n23:01 How do you develop taste without classical training?\n30:59 Outro",
+  "duration": 1893,
+  "publishDate": "",
+  "url": "https://www.youtube.com/watch?v=IACHfKmZMr8",
+  "coverImage": "imgs/cover.jpg",
+  "thumbnailUrl": "https://i.ytimg.com/vi/IACHfKmZMr8/maxresdefault.jpg",
+  "language": {
+    "code": "en",
+    "name": "English (auto-generated)",
+    "isGenerated": true
+  },
+  "chapters": [
+    {
+      "title": "Intro",
+      "start": 0,
+      "end": 42
+    },
+    {
+      "title": "What is vibe coding?",
+      "start": 42,
+      "end": 60
+    },
+    {
+      "title": "What founders in the current YC batch are saying",
+      "start": 60,
+      "end": 275
+    },
+    {
+      "title": "Debugging and building systems",
+      "start": 275,
+      "end": 419
+    },
+    {
+      "title": "The models people are using now",
+      "start": 419,
+      "end": 601
+    },
+    {
+      "title": "What percentage of code is being written by LLM’s?",
+      "start": 601,
+      "end": 718
+    },
+    {
+      "title": "What changed and what stayed the same?",
+      "start": 718,
+      "end": 1088
+    },
+    {
+      "title": "How Triplebyte did candidate assessments and how would that change in this era",
+      "start": 1088,
+      "end": 1297
+    },
+    {
+      "title": "Key skills that will remain relevant",
+      "start": 1297,
+      "end": 1381
+    },
+    {
+      "title": "How do you develop taste without classical training?",
+      "start": 1381,
+      "end": 1859
+    },
+    {
+      "title": "Outro",
+      "start": 1859,
+      "end": 1893
+    }
+  ]
+}
